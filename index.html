@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#fff9ef" />
+    <meta name="description" content="ITクラブ × プレマミの国語・算数学習ゲーム" />
+    <title>まなびのぼうけん | ITクラブ × プレマミ</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span><span>ITクラブ <small>×</small> プレマミ</span></div>
+        <button id="settings-open" class="settings-button" type="button">⚙ 保護者設定</button>
+      </header>
+
+      <main class="main-content">
+        <section class="intro" aria-labelledby="page-title">
+          <div class="eyebrow">きょうの まなびタイム</div>
+          <h1 id="page-title">まなびの<span>ぼうけん</span></h1>
+          <p>こくご と さんすう。たのしく すすもう！</p>
+          <div class="mascot" aria-hidden="true"><div class="mascot-face"><span>●</span><span>●</span><b>ᴗ</b></div><div class="mascot-star">✦</div></div>
+        </section>
+
+        <section class="dashboard" aria-label="今日の進みぐあい">
+          <div class="progress-card"><div class="progress-icon clock-icon">◷</div><div><span class="card-label">べんきょうした じかん</span><strong id="time-progress">0 / 30分</strong></div><div class="progress-track"><div id="time-bar" class="progress-fill time-fill"></div></div></div>
+          <div class="progress-card"><div class="progress-icon star-icon">★</div><div><span class="card-label">せいかいした もんだい</span><strong id="question-progress">0 / 10問</strong></div><div class="progress-track"><div id="question-bar" class="progress-fill question-fill"></div></div></div>
+        </section>
+
+        <div id="goal-banner" class="goal-banner" role="status" hidden>🎉 きょうの もくひょう たっせい！ 保護者の方に みせてね。</div>
+
+        <section class="study-section" aria-labelledby="study-title">
+          <div class="section-heading"><div><span class="section-kicker">CHOOSE YOUR ADVENTURE</span><h2 id="study-title">どれから やる？</h2></div><span class="section-decoration" aria-hidden="true">✳</span></div>
+          <div class="controls">
+            <label class="select-wrap">がくねん <select id="level-select"><option value="kindergarten">ようちえん</option><option value="grade1">小学1年生</option><option value="grade2">小学2年生</option><option value="grade3">小学3年生</option></select></label>
+          </div>
+          <div class="subject-grid">
+            <button class="subject-card japanese-card" type="button" data-subject="japanese"><span class="subject-illustration" aria-hidden="true">あ</span><span class="subject-copy"><strong>こくご</strong><small>ことば・よみかた</small></span><span class="subject-arrow" aria-hidden="true">→</span></button>
+            <button class="subject-card math-card" type="button" data-subject="math"><span class="subject-illustration" aria-hidden="true">1<span>＋</span>2</span><span class="subject-copy"><strong>さんすう</strong><small>かず・けいさん</small></span><span class="subject-arrow" aria-hidden="true">→</span></button>
+          </div>
+        </section>
+
+        <section id="quiz-panel" class="quiz-panel" aria-labelledby="quiz-title" hidden>
+          <div class="quiz-top"><span id="quiz-subject" class="quiz-tag"></span><button id="quiz-close" class="text-button" type="button">とじる ×</button></div>
+          <h2 id="quiz-title">もんだいに ちょうせん！</h2>
+          <p id="quiz-prompt" class="quiz-prompt"></p>
+          <div id="choices" class="choices" role="group" aria-label="こたえをえらぶ"></div>
+          <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+          <button id="next-button" class="next-button" type="button" hidden>つぎの もんだいへ →</button>
+        </section>
+
+        <footer class="footer">まいにち すこしずつ、できた！を ふやそう。<br /><small>試作版：達成表示は端末のアプリ制限を解除しません。</small></footer>
+      </main>
+    </div>
+
+    <dialog id="settings-dialog" class="settings-dialog" aria-labelledby="settings-title">
+      <form method="dialog" id="settings-form">
+        <div class="dialog-heading"><div><span class="section-kicker">FOR PARENTS</span><h2 id="settings-title">保護者設定</h2></div><button class="dialog-close" type="submit" aria-label="閉じる">×</button></div>
+        <p class="settings-note">試作版の設定です。端末内の保存のみで、子どもによる変更を防ぐ仕組みはありません。</p>
+        <label>学習時間の目標 <select id="minutes-setting"><option value="5">5分</option><option value="10">10分</option><option value="15">15分</option><option value="20">20分</option><option value="30">30分</option></select></label>
+        <label>正解数の目標 <select id="questions-setting"><option value="5">5問</option><option value="10">10問</option><option value="15">15問</option><option value="20">20問</option></select></label>
+        <p class="settings-rule">どちらかの目標を達成すると、アプリ内に達成メッセージを表示します。時間は問題画面が表示され、操作から60秒以内の間だけ加算します。</p>
+        <button id="save-settings" class="save-button" type="button">設定を保存</button>
+        <button id="reset-progress" class="reset-button" type="button">今日の記録をリセット</button>
+      </form>
+    </dialog>
+  </body>
+</html>
