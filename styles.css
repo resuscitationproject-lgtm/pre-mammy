@@ -6,20 +6,20 @@
 .topbar{gap:24px}
 .collaboration-logo{display:flex;align-items:center;gap:14px;min-width:0}
 .collaboration-logo img{display:block;object-fit:contain;mix-blend-mode:multiply}
-.collaboration-logo__it{width:190px;height:78px}
-.collaboration-logo__premami{width:70px;height:108px}
+.collaboration-logo__it{width:170px;height:70px}
+.collaboration-logo__premami{width:45px;height:70px}
 .collaboration-logo__cross{display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:#fff;color:#ee8f78;font-size:20px;font-weight:900;box-shadow:0 4px 12px #7c655b20}
 
 @media(max-width:700px){
   .topbar{align-items:flex-start;gap:12px}
   .collaboration-logo{gap:8px}
-  .collaboration-logo__it{width:120px;height:50px}
-  .collaboration-logo__premami{width:44px;height:69px}
+  .collaboration-logo__it{width:115px;height:47px}
+  .collaboration-logo__premami{width:30px;height:47px}
   .collaboration-logo__cross{flex-basis:23px;width:23px;height:23px;font-size:15px}
 }
 
 @media(max-width:410px){
-  .collaboration-logo__it{width:98px;height:41px}
-  .collaboration-logo__premami{width:36px;height:56px}
+  .collaboration-logo__it{width:98px;height:40px}
+  .collaboration-logo__premami{width:26px;height:40px}
   .collaboration-logo__cross{flex-basis:20px;width:20px;height:20px;font-size:13px}
 }
